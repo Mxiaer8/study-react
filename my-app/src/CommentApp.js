@@ -15,11 +15,15 @@ class CommentApp extends React.Component {
         const commentsStroge = JSON.parse(localStorage.getItem('comments'))
         if (commentsStroge) {
             this._updateTime()
-            setInterval(()=>{
+            this.timer = setInterval(()=>{
                this._updateTime()
             },5000)
         }
 
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer)
     }
 
     _updateTime() {
