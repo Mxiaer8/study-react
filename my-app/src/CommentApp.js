@@ -39,7 +39,7 @@ class CommentApp extends React.Component {
 
 
     handleSubmitComment(comment) {
-        const commentsStroge = JSON.parse(localStorage.getItem('comments'))
+        let commentsStroge = JSON.parse(localStorage.getItem('comments'))
         if (!commentsStroge) commentsStroge = []
         commentsStroge.push(comment)
         this._saveComment(commentsStroge)
